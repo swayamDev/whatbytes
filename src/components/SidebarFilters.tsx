@@ -21,7 +21,7 @@ export default function SidebarFilters() {
     cat !== "all" ? p.set("category", cat) : p.delete("category");
     price !== 1000 ? p.set("price", String(price)) : p.delete("price");
     router.replace(`/?${p.toString()}`);
-  }, [cat, price]);
+  }, [cat, price, router, sp]);
 
   return (
     <aside className="card p-5 sticky top-5 h-fit">
@@ -44,8 +44,11 @@ export default function SidebarFilters() {
       </div>
 
       <div>
-        <p className="text-sm font-medium mb-2">Price</p>
+        <label htmlFor="price" className="text-sm font-medium mb-2 block">
+          Price
+        </label>
         <input
+          id="price"
           type="range"
           min={0}
           max={1000}

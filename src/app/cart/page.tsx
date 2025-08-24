@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useCart } from "@/store/cart";
+import Image from "next/image";
 
 export default function CartPage() {
   const { items, update, remove, clear, total } = useCart();
@@ -25,7 +26,7 @@ export default function CartPage() {
             key={product.id}
             className="flex items-center gap-4 border-b py-4 last:border-0"
           >
-            <img
+            <Image
               src={product.image}
               className="h-20 w-20 object-contain"
               alt=""
