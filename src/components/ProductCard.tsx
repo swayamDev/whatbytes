@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Product } from "@/lib/products";
 import { useCart } from "@/store/cart";
 import RatingStars from "./RatingStars";
+import Image from "next/image";
 
 export default function ProductCard({ p }: { p: Product }) {
   const add = useCart((s) => s.add);
@@ -11,7 +12,7 @@ export default function ProductCard({ p }: { p: Product }) {
   return (
     <div className="card p-4">
       <Link href={`/product/${p.id}`} className="block">
-        <img
+        <Image
           src={p.image}
           alt={p.title}
           className="h-40 w-full object-contain"

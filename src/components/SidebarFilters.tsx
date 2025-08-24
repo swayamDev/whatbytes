@@ -10,11 +10,15 @@ export default function SidebarFilters() {
   const router = useRouter();
   const sp = useSearchParams();
 
-  const [cat, setCat] = useState<Cat>((sp.get("category") as Cat) || "all");
-  const [price, setPrice] = useState<number>(() => {
+  const [cat, setCat] = useState<Cat>("all");
+  const [price, setPrice] = useState<number>(1000);
+
+  useEffect(() => {
+    const c = sp.get("category") as Cat;
     const pv = sp.get("price");
-    return pv ? Number(pv) : 1000;
-  });
+    if (c) setCat(c);
+    if (pv) setPrice(Number(pv));
+  }, [sp]);
 
   useEffect(() => {
     const p = new URLSearchParams(sp.toString());
@@ -26,7 +30,6 @@ export default function SidebarFilters() {
   return (
     <aside className="card p-5 sticky top-5 h-fit">
       <h3 className="text-xl font-semibold mb-4">Filters</h3>
-
       <div className="mb-5">
         <p className="text-sm font-medium mb-2">Category</p>
         <div className="space-y-2">
@@ -42,7 +45,6 @@ export default function SidebarFilters() {
           ))}
         </div>
       </div>
-
       <div>
         <label htmlFor="price" className="text-sm font-medium mb-2 block">
           Price
@@ -57,8 +59,7 @@ export default function SidebarFilters() {
           className="w-full"
         />
         <div className="flex justify-between text-sm mt-1">
-          <span>$0</span>
-          <span>$1000</span>
+          <span>$0</span> <span>$1000</span>
         </div>
       </div>
     </aside>

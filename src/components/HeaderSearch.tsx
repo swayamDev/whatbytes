@@ -1,12 +1,16 @@
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function HeaderSearch() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const [q, setQ] = useState(searchParams.get("q") ?? "");
+  const [q, setQ] = useState("");
+
+  useEffect(() => {
+    setQ(searchParams.get("q") ?? "");
+  }, [searchParams]);
 
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();

@@ -4,6 +4,7 @@ import { useParams } from "next/navigation";
 import { products } from "@/lib/products";
 import { useCart } from "@/store/cart";
 import RatingStars from "@/components/RatingStars";
+import Image from "next/image";
 
 export default function ProductDetail() {
   const { id } = useParams<{ id: string }>();
@@ -15,7 +16,7 @@ export default function ProductDetail() {
   return (
     <div className="grid gap-8 lg:grid-cols-2">
       <div className="card p-6 flex items-center justify-center">
-        <img
+        <Image
           src={p.image}
           alt={p.title}
           className="max-h-[420px] object-contain"
