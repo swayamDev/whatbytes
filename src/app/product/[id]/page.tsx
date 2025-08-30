@@ -20,6 +20,8 @@ export default function ProductDetail() {
           src={p.image}
           alt={p.title}
           className="max-h-[420px] object-contain"
+          width={420}
+          height={420}
         />
       </div>
 

@@ -91,3 +91,14 @@ export const products: Product[] = [
     description: "6.5” OLED, 120Hz, 5000mAh, triple camera.",
   },
 ];
+
+export const suggestions = [
+  "Running Shoes",
+  "Wireless Headphones",
+  "Backpack",
+  "Smartwatch",
+  "Sunglasses",
+  "Digital Camera",
+  "T-shirt",
+  "Smartphone",
+];

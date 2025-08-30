@@ -16,6 +16,8 @@ export default function ProductCard({ p }: { p: Product }) {
           src={p.image}
           alt={p.title}
           className="h-40 w-full object-contain"
+          width={80}
+          height={80}
         />
       </Link>
       <div className="mt-3">

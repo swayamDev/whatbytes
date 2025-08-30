@@ -11,16 +11,45 @@ export default function Footer() {
         <div>
           <h2 className="text-lg font-semibold mb-2">About Us</h2>
           <ul className="space-y-1 opacity-90">
-            <li>About Us</li>
-            <li>Contact</li>
+            <li>
+              <a href="/about" className="hover:underline">
+                About Us
+              </a>
+            </li>
+            <li>
+              <a href="/contact" className="hover:underline">
+                Contact
+              </a>
+            </li>
           </ul>
         </div>
         <div>
           <h2 className="text-lg font-semibold mb-2">Follow Us</h2>
           <div className="flex gap-3">
-            <FaFacebook size="23" />
-            <FaTwitter size="23" />
-            <FaInstagram size="23" />
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
+              <FaFacebook size={23} className="hover:text-blue-400" />
+            </a>
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Twitter"
+            >
+              <FaTwitter size={23} className="hover:text-sky-400" />
+            </a>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <FaInstagram size={23} className="hover:text-pink-400" />
+            </a>
           </div>
         </div>
       </div>

@@ -29,11 +29,13 @@ function ProductList() {
       <h1 className="text-3xl font-bold mb-4">Product Listing</h1>
 
       {list.length === 0 ? (
-        <div className="card p-8 text-center">
-          <p className="text-lg font-medium">No products found.</p>
-          <p className="text-sm text-slate-600">
-            Try adjusting filters or search.
-          </p>
+        <div className="flex flex-col min-h-screen">
+          <div className="card p-8 text-center">
+            <p className="text-lg font-medium">No products found.</p>
+            <p className="text-sm text-slate-600">
+              Try adjusting filters or search.
+            </p>
+          </div>
         </div>
       ) : (
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

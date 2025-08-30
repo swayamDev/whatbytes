@@ -28,8 +28,10 @@ export default function SidebarFilters() {
   }, [cat, price, router, sp]);
 
   return (
-    <aside className="card p-5 sticky top-5 h-fit">
+    <aside className="card-side p-5 sticky top-5 h-fit">
       <h3 className="text-xl font-semibold mb-4">Filters</h3>
+
+      {/* Category Filter */}
       <div className="mb-5">
         <p className="text-sm font-medium mb-2">Category</p>
         <div className="space-y-2">
@@ -45,9 +47,11 @@ export default function SidebarFilters() {
           ))}
         </div>
       </div>
+
+      {/* Price Filter */}
       <div>
         <label htmlFor="price" className="text-sm font-medium mb-2 block">
-          Price
+          Price: <span className="font-semibold">${price}</span>
         </label>
         <input
           id="price"
@@ -56,7 +60,7 @@ export default function SidebarFilters() {
           max={1000}
           value={price}
           onChange={(e) => setPrice(Number(e.target.value))}
-          className="w-full"
+          className="w-full accent-white"
         />
         <div className="flex justify-between text-sm mt-1">
           <span>$0</span> <span>$1000</span>
